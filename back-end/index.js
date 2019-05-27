@@ -12,16 +12,12 @@ server.use(logger('combined'));
 server.use(cors());
 server.use(helmet());
 
-// //routes
-// const noteRoutes = require('./routes/noteRoutes.js');
-// const userRoutes = require('./routes/userRoutes.js');
-// const bookRoutes = require('./routes/bookRoutes.js');
-// const pageRoutes = require('./routes/pageRoutes.js');
+//routes
+const noteRoutes = require('./routes/noteRoutes.js');
+const userRoutes = require('./routes/userRoutes.js');
 
-// server.use('/api/notes', noteRoutes);
-// server.use('/api/users', userRoutes);
-// server.use('/api/books', bookRoutes);
-// server.use('/api/pages', pageRoutes);
+server.use('/api/notes', noteRoutes);
+server.use('/api/users', userRoutes);
 
 //server tester message
 server.get('/', (req, res) => {
