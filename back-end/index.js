@@ -1,16 +1,16 @@
 console.log("Good morning, index.js is functioning just fine!!");
 
 const express = require('express');
-// const cors = require('cors');
-// const helmet = require('helmet');
-// const logger = require('morgan');
+const cors = require('cors');
+const helmet = require('helmet');
+const logger = require('morgan');
 
 const server = express();
 
 server.use(express.json());
-// server.use(logger('combined'));
-// server.use(cors());
-// server.use(helmet());
+server.use(logger('combined'));
+server.use(cors());
+server.use(helmet());
 
 // //routes
 // const noteRoutes = require('./routes/noteRoutes.js');
@@ -23,10 +23,10 @@ server.use(express.json());
 // server.use('/api/books', bookRoutes);
 // server.use('/api/pages', pageRoutes);
 
-// //server tester message
-// server.get('/', (req, res) => {
-//     res.send('Let\'s make some Magic!');
-// });
+//server tester message
+server.get('/', (req, res) => {
+    res.send('Let\'s make some Magic!');
+});
 
 //port setup
 const port = 9000;
