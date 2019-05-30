@@ -8,6 +8,8 @@ import NotesList from './components/noteList.js';
 import NoteDeleteForm from './components/noteDelete.js';
 import NotesForm from './components/noteForm.js';
 import NoteUpdateForm from './components/noteUpdate.js';
+import Daisy from './PNG/daisy.png';
+import Title from './PNG/nmker.png';
 
 
 import './App.css';
@@ -109,7 +111,8 @@ class App extends Component {
           </div>
         </div>
           <main>
-            <Route exact path="/" component={Home}></Route>
+            <Route path="/" render={(props) => <App auth={auth}{...props} />} />
+            <Route exact path="/home" component={Home}></Route>
             <Route exact path="/notes" render={(props) =>
               (<NotesList {...props} notes={this.state.notes} />)} />
             <Route path="/newNotes" render={(props) =>
@@ -121,6 +124,8 @@ class App extends Component {
             <Route path="/updateNote/:id" render={(props) =>
               (<NoteUpdateForm {...props} updateNote={this.updateNote} />)} />
           </main>
+          <img src={Daisy} alt="daisy" />
+          <img src={Title} alt="title" />
       </div>
     );
   }
