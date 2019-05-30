@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, NavLink } from 'react-router-dom';
 import axios from 'axios';
 
 import Home from './Home/Home.js';
@@ -21,24 +21,9 @@ class App extends Component {
       notes: [],
     }
   };
-  goTo(route) {
-    this.props.history.replace(`/${route}`)
-  }
-
-  login() {
-    this.props.auth.login();
-  }
-
-  logout() {
-    this.props.auth.logout();
-  }
+  
 
   componentDidMount() {
-    const { renewSession } = this.props.auth;
-
-    if (localStorage.getItem('isLoggedIn') === 'true') {
-      renewSession();
-    }
     this.grabAllNotes();
   }
 
@@ -69,49 +54,10 @@ class App extends Component {
 
 
   render() {
-    const { isAuthenticated } = this.props.auth;
+  
     return (
       <div className="App">
-        <div>
-          <div>
-            <div>
-              <a href="#">Auth0 - React</a>
-            </div>
-            <h3
-              bsStyle="primary"
-              className="btn-margin"
-              onClick={this.goTo.bind(this, 'home')}
-            >
-              Home
-            </h3>
-            {
-              !isAuthenticated() && (
-                  <h3
-                    id="qsLoginBtn"
-                    bsStyle="primary"
-                    className="btn-margin"
-                    onClick={this.login.bind(this)}
-                  >
-                    Log In
-                  </h3>
-                )
-            }
-            {
-              isAuthenticated() && (
-                  <h3
-                    id="qsLogoutBtn"
-                    bsStyle="primary"
-                    className="btn-margin"
-                    onClick={this.logout.bind(this)}
-                  >
-                    Log Out
-                  </h3>
-                )
-            }
-          </div>
-        </div>
           <main>
-            <Route path="/" render={(props) => <App auth={auth}{...props} />} />
             <Route exact path="/home" component={Home}></Route>
             <Route exact path="/notes" render={(props) =>
               (<NotesList {...props} notes={this.state.notes} />)} />
@@ -123,9 +69,15 @@ class App extends Component {
               (<NoteDeleteForm {...props} deleteNote={this.deleteNote} />)} />
             <Route path="/updateNote/:id" render={(props) =>
               (<NoteUpdateForm {...props} updateNote={this.updateNote} />)} />
+            <Route path="/signIn" render={(props) =>
+              (<SignIn {...props} updateNote={this.updateNote} />)} />
+            <Route path="/signUp" render={(props) =>
+              (<SignUp {...props} updateNote={this.updateNote} />)} />
           </main>
-          <img src={Daisy} alt="daisy" />
-          <img src={Title} alt="title" />
+          <NavLink to="/signIn">Sign In</NavLink>
+          <NavLink to="/signUp">Sign Up</NavLink>
+          <img src={Daisy} alt="daisy" className="daisy" />
+          <img src={Title} alt="title" className="title" />
       </div>
     );
   }

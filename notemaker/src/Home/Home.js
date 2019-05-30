@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// import auth from "../Auth/auth";
 
 class Home extends Component {
     login() {
@@ -19,7 +20,7 @@ class Home extends Component {
             !isAuthenticated() && (
                 <h4>
                   You are not logged in! Please{' '}
-                  <a style={{ cursor: 'pointer' }}
+                  <a href="http:localhost:9000/api/notes" style={{ cursor: 'pointer' }}
                     onClick={this.login.bind(this)}>
                     Log In
                   </a>

@@ -38,12 +38,12 @@ router.get('/:id', async (req, res) => {
   });
 
    //get note by user id
-router.get('/:id/users', (req, res) => {
+router.get('/:id/userstwo', (req, res) => {
     const { id } = req.params;
     db('notes')
-    .join('users', 'notes.id', '=', 'users.notes_id')
-    .select('notes.notes_title as note', 'users.username')
-    .where('users.notes_id', id)
+    .join('userstwo', 'notes.id', '=', 'userstwo.notes_id')
+    .select('notes.notes_title as note', 'userstwo.username')
+    .where('userstwo.notes_id', id)
     .then(response => {
       console.log(response)
       res.status(200).json(response)
