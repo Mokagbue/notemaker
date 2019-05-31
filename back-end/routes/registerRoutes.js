@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const knex = require('knex');
 const knexConfig = require('../knexfile.js');
+const bcrypt = require('bcryptjs'); //bring in the bcryptjs
 const db = knex(knexConfig.development);
 
 
