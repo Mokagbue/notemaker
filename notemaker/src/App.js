@@ -8,6 +8,8 @@ import NotesList from './components/noteList.js';
 import NoteDeleteForm from './components/noteDelete.js';
 import NotesForm from './components/noteForm.js';
 import NoteUpdateForm from './components/noteUpdate.js';
+import SignUp from './components/signUp.js';
+import SignIn from './components/signIn.js';
 import Daisy from './PNG/daisy.png';
 import Title from './PNG/nmker.png';
 
@@ -76,6 +78,7 @@ class App extends Component {
           </main>
           <NavLink to="/signIn">Sign In</NavLink>
           <NavLink to="/signUp">Sign Up</NavLink>
+          <NavLink to="/">Home</NavLink>
           <img src={Daisy} alt="daisy" className="daisy" />
           <img src={Title} alt="title" className="title" />
       </div>
