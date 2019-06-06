@@ -12,7 +12,7 @@ router.post('/', (req, res) => {
       const hash = bcrypt.hashSync(credentials.password, 14);
     credentials.password = hash;
   
-    db('userstwo').insert(credentials).then(ids => {
+    db('usersthree').insert(credentials).then(ids => {
       const id = ids[0];
       res.status(201).json({ newUserId: id })
     })

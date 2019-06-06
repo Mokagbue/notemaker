@@ -10,7 +10,7 @@ const db = knex(knexConfig.development);
 //list all users
 router.get('/', (req, res) => {
 // router.get('/', protected, (req, res) => {
-  db('userstwo')
+  db('usersthree')
     .select('id', 'username', 'password')// we normally wouldn't have it return the password
     .then(users => {
       res.json({ userId: req.session.userId, users });
@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     const user = req.body;
     db.insert(user)
-    .into('userstwo')
+    .into('usersthree')
     .then(ids => {
       res.status(201).json(ids);
     })
@@ -35,7 +35,7 @@ router.post('/', (req, res) => {
 router.get('/:id', async (req, res) => {
     try {
     const { id } = req.params;
-    const users = await db('userstwo').where({ id }).first();
+    const users = await db('usersthree').where({ id }).first();
     res.status(200).json(users);
     } catch (err) {
       res.status(500).json({ error: 'failed get user by that id', err });
@@ -45,7 +45,7 @@ router.get('/:id', async (req, res) => {
   // delete user by id
 router.delete('/:id', (req,res) => {
     const { id } = req.params;
-    db('userstwo')
+    db('usersthree')
     .where({ id })
     .delete()
     .then(count => {
@@ -64,7 +64,7 @@ router.delete('/:id', (req,res) => {
   router.put('/:id', (req, res) => {
     const { id } = req.params;
     const changes = req.body;
-    db('userstwo')
+    db('usersthree')
     .where({ id })
     .update(changes)
     .then(count => {

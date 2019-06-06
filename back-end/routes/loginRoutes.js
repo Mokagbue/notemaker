@@ -8,7 +8,7 @@ const db = knex(knexConfig.development);
   
   router.post('/', (req, res) => {
     const credentials = req.body;
-    db('users').where({username: credentials.username}).first().then(user => {
+    db('usersthree').where({username: credentials.username}).first().then(user => {
   //compareSync is how we figure that out, compares the given password and the 
   //actual password
   if(user && bcrypt.compareSync(credentials.password, user.password)) {

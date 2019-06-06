@@ -58,7 +58,7 @@ const logoutRoutes = require('./routes/logoutRoutes.js');
 const registerRoutes = require('./routes/registerRoutes.js');
 
 server.use('/api/notes', noteRoutes);
-server.use('/api/userstwo', userRoutes);
+server.use('/api/users', userRoutes);
 server.use('/api/login', loginRoutes);
 server.use('/api/logout', logoutRoutes);
 server.use('/api/register', registerRoutes);

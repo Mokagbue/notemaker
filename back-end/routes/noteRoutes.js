@@ -7,7 +7,7 @@ const db = knex(knexConfig.development);
 
 //list all
 router.get('/', (req, res) => {
-    db('notes').then(notes => {
+    db('notesthree').then(notes => {
       res.status(200).json(notes);
     })
     .catch(err => res.status(500).json({ error: 'failed to retrieve notes', err }));
@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     const note = req.body;
     db.insert(note)
-    .into('notes')
+    .into('notesthree')
     .then(ids => {
       res.status(201).json(ids);
     })
@@ -30,7 +30,7 @@ router.post('/', (req, res) => {
 router.get('/:id', async (req, res) => {
     try {
     const { id } = req.params;
-    const notes = await db('notes').where({ id }).first();
+    const notes = await db('notesthree').where({ id }).first();
     res.status(200).json(notes);
     } catch (err) {
       res.status(500).json({ error: 'failed to get note by id', err });
@@ -38,12 +38,12 @@ router.get('/:id', async (req, res) => {
   });
 
    //get note by user id
-router.get('/:id/userstwo', (req, res) => {
+router.get('/:id/users', (req, res) => {
     const { id } = req.params;
-    db('notes')
-    .join('userstwo', 'notes.id', '=', 'userstwo.notes_id')
-    .select('notes.notes_title as note', 'userstwo.username')
-    .where('userstwo.notes_id', id)
+    db('notesthree')
+    .join('usersthree', 'notesthree.id', '=', 'users.notes_id')
+    .select('notesthree.notes_title as note', 'usersthree.username')
+    .where('usersthree.notes_id', id)
     .then(response => {
       console.log(response)
       res.status(200).json(response)
@@ -53,7 +53,7 @@ router.get('/:id/userstwo', (req, res) => {
   //knex delete
 router.delete('/:id', (req,res) => {
     const { id } = req.params;
-    db('notes')
+    db('notesthree')
     .where({ id })
     .delete()
     .then(count => {
@@ -70,7 +70,7 @@ router.delete('/:id', (req,res) => {
   router.put('/:id', (req, res) => {
     const { id } = req.params;
     const changes = req.body;
-    db('notes')
+    db('notesthree')
     .where({ id })
     .update(changes)
     .then(count => {
