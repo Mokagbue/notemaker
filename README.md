@@ -6,6 +6,5 @@ Utilizing netflify allowed for an easy deploy.
 Implementation of React allowed the use of single page application.
 
 
-
 HTML | CSS | React | Node | Heroku | Netlify
 
