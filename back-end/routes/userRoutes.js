@@ -5,18 +5,20 @@ const knex = require('knex');
 const knexConfig = require('../knexfile.js');
 const db = knex(knexConfig.development);
 
-
-
 //list all users
-router.get('/', (req, res) => {
+router.get('/', protected, (req, res) => {
 // router.get('/', protected, (req, res) => {
   db('usersthree')
     .select('id', 'username', 'password')// we normally wouldn't have it return the password
     .then(users => {
-      res.json({ userId: req.session.userId, users });
+      res.json({ users });
     })
     .catch(err => res.send(err));
 });
+
+function protected(req, res, next) {
+    next();
+  }
 
   //create new user
 router.post('/', (req, res) => {
@@ -56,8 +58,6 @@ router.delete('/:id', (req,res) => {
       }
     })
     .catach(err => res.status(500).json({ message: 'failed to delete user.', err}));
-  
-  
   }); 
   
   //edit user by id
@@ -76,5 +76,7 @@ router.delete('/:id', (req,res) => {
     })
     .catach(err => res.status(500).json({ message: 'failed to update user.', err }));
   });
+
+  
 
   module.exports = router;
