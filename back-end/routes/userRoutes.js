@@ -4,6 +4,7 @@ const router = express.Router();
 const knex = require('knex');
 const knexConfig = require('../knexfile.js');
 const db = knex(knexConfig.development);
+const jwtSecret = 'batman was here';
 
 //list all users
 router.get('/', protected, (req, res) => {
@@ -17,7 +18,22 @@ router.get('/', protected, (req, res) => {
 });
 
 function protected(req, res, next) {
-    next();
+  const token = req.headers.authorization;
+  if(token){
+    jwt.verify(token, jwtSecret, (err, decodedToken) => {
+      if(err){
+        //token varifaction failed
+        res.status(401).json({ message: 'invalid token'});
+      } else {
+        // token is valid
+        req.decodedToken = decodedToken;
+        next();
+      }
+    })
+  } else {
+    res.status(401).json({ message: "Not authorized."})
+  }
+  next();
   }
 
   //create new user
