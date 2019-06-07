@@ -5,10 +5,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 const logger = require('morgan');
 const bcrypt = require('bcryptjs'); //bring in the bcryptjs
-// const credentials = req.body;
-// const hash = bcrypt.hashSync(credentials.password, 14);
-// credentials.password = hash;
-
+const jwt = require('jsonwebtoken');
 
 const database = require('./database/dbConfig.js');
 
