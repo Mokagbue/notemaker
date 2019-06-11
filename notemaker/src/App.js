@@ -3,13 +3,14 @@ import { Route, NavLink } from 'react-router-dom';
 import axios from 'axios';
 
 import Home from './Home/Home.js';
-import Note from './components/note.js';
-import NotesList from './components/noteList.js';
-import NoteDeleteForm from './components/noteDelete.js';
-import NotesForm from './components/noteForm.js';
-import NoteUpdateForm from './components/noteUpdate.js';
+import Note from './components/Notes/note.js';
+import NotesList from './components/Notes/noteList.js';
+import NoteDeleteForm from './components/Notes/noteDelete.js';
+import NotesForm from './components/Notes/noteForm.js';
+import NoteUpdateForm from './components/Notes/noteUpdate.js';
 import SignUp from './components/signUp.js';
 import SignIn from './components/signIn.js';
+
 import Daisy from './PNG/daisy.png';
 import Title from './PNG/nmker.png';
 
