@@ -5,6 +5,7 @@ const knex = require('knex');
 const knexConfig = require('../knexfile.js');
 const db = knex(knexConfig.development);
 const jwtSecret = 'batman was here';
+const jwt = require('jsonwebtoken');
 
 //list all users
 router.get('/', protected, (req, res) => {
@@ -22,7 +23,7 @@ function protected(req, res, next) {
   if(token){
     jwt.verify(token, jwtSecret, (err, decodedToken) => {
       if(err){
-        //token varifaction failed
+        //token verification failed
         res.status(401).json({ message: 'invalid token'});
       } else {
         // token is valid
