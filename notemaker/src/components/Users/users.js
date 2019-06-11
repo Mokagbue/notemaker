@@ -1,21 +1,24 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 // import axios from 'axios';
-// import { NavLink,  } from 'react-router-dom';
 
 class Users extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
+    componentDidMount() {
+        const endpoint = "https://localhost:9000/api/users";
+        axios
+            .get(endpoint).then(res => {
+                console("Got Users",res.data);
+            })
+            .catch(err => {
+                console.error("Error getting users", err);
+            });
         }
-    }
-    
-    render() {
+    render() { 
         return (
             <div>
-
-            
+                <h1>NoteMaker Users</h1>
             </div>
-        )
+        );
     }
 }
 export default Users;
