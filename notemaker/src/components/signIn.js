@@ -3,8 +3,8 @@ import axios from 'axios';
 
 class SignIn extends Component {
         state = {
-            username: '',
-            password: ''
+            username: 'Jazzy',
+            password: 'cats'
         };
 
     handleSubmit = event => {

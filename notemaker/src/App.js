@@ -8,8 +8,9 @@ import NotesList from './components/Notes/noteList.js';
 import NoteDeleteForm from './components/Notes/noteDelete.js';
 import NotesForm from './components/Notes/noteForm.js';
 import NoteUpdateForm from './components/Notes/noteUpdate.js';
-import SignUp from './components/signUp.js';
-import SignIn from './components/signIn.js';
+// import SignUp from './components/signUp.js';
+// import SignIn from './components/signIn.js';
+import Users from './components/Users/users.js';
 
 import Daisy from './PNG/daisy.png';
 import Title from './PNG/nmker.png';
@@ -72,13 +73,10 @@ class App extends Component {
               (<NoteDeleteForm {...props} deleteNote={this.deleteNote} />)} />
             <Route path="/updateNote/:id" render={(props) =>
               (<NoteUpdateForm {...props} updateNote={this.updateNote} />)} />
-            <Route path="/signIn" render={(props) =>
-              (<SignIn {...props} updateNote={this.updateNote} />)} />
-            <Route path="/signUp" render={(props) =>
-              (<SignUp {...props} updateNote={this.updateNote} />)} />
+            
+            <Route exact path="/users" component={Users}></Route>
           </main>
-          <NavLink to="/signIn">Sign In</NavLink>
-          <NavLink to="/signUp">Sign Up</NavLink>
+          <NavLink to="/login">Sign In</NavLink>
           <NavLink to="/">Home</NavLink>
           <img src={Daisy} alt="daisy" className="daisy" />
           <img src={Title} alt="title" className="title" />
