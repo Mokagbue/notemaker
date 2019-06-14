@@ -6,7 +6,10 @@ class SignIn extends Component {
             username: 'Jazzy',
             password: 'cats'
         };
-
+    handleInputChange = event => {
+        const { name, value }  = event.target;
+        this.setState({ [name] : value })
+    }
     handleSubmit = event => {
         event.preventDefault();
         const endpoint = "http://localhost:9000/api/login";
@@ -25,11 +28,21 @@ class SignIn extends Component {
                 <form onSubmit={this.handleSubmit}>
                     <div>
                         <label htmlFor="username">Username</label>
-                        <input type="text" />
+                        <input 
+                            type="text" 
+                            name="username" 
+                            value={this.state.username} 
+                            onChange={this.handleInputChange} 
+                        />
                     </div>
                     <div>
                         <label htmlFor="password">Password</label>
-                        <input type="password" />
+                        <input 
+                            type="password" 
+                            name="password" 
+                            value={this.state.password} 
+                            onChange={this.handleInputChange} 
+                        />
                     </div>
                     <div>
                         <button type="submit">SignIn</button>
