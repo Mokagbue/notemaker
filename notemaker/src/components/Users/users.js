@@ -4,9 +4,16 @@ import axios from 'axios';
 
 class Users extends Component {
     componentDidMount() {
+        const token = localStorage.getItem('jwt');
         const endpoint = "https://localhost:9000/api/users";
+        const options = {
+            //how do we pass the token to the client, to the server?...Headers!
+            headers: {
+                Authorization: token,
+            },
+        };
         axios
-            .get(endpoint).then(res => {
+            .get(endpoint, options).then(res => {
                 console("Got Users",res.data);
             })
             .catch(err => {

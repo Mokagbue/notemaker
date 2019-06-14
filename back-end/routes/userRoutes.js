@@ -8,7 +8,7 @@ const jwtSecret = 'batman was here';
 const jwt = require('jsonwebtoken');
 
 //list all users
-router.get('/', protected, (req, res) => {
+router.get('/', protected, checkRole('admin'), (req, res) => {
 // router.get('/', protected, (req, res) => {
   db('usersthree')
     .select('id', 'username', 'password')// we normally wouldn't have it return the password
@@ -17,25 +17,6 @@ router.get('/', protected, (req, res) => {
     })
     .catch(err => res.send(err));
 });
-
-function protected(req, res, next) {
-  const token = req.headers.authorization;
-  if(token){
-    jwt.verify(token, jwtSecret, (err, decodedToken) => {
-      if(err){
-        //token verification failed
-        res.status(401).json({ message: 'invalid token'});
-      } else {
-        // token is valid
-        req.decodedToken = decodedToken;
-        next();
-      }
-    })
-  } else {
-    res.status(401).json({ message: "Not authorized."})
-  }
-  next();
-  }
 
   //create new user
 router.post('/', (req, res) => {
@@ -93,6 +74,35 @@ router.delete('/:id', (req,res) => {
     })
     .catach(err => res.status(500).json({ message: 'failed to update user.', err }));
   });
+
+  function protected(req, res, next) {
+    const token = req.headers.authorization;
+    if(token){
+      jwt.verify(token, jwtSecret, (err, decodedToken) => {
+        if(err){
+          //token verification failed
+          res.status(401).json({ message: 'invalid token'});
+        } else {
+          // token is valid
+          req.decodedToken = decodedToken;
+          next();
+        }
+      })
+    } else {
+      res.status(401).json({ message: "Not authorized."})
+    }
+    next();
+    }
+    
+    function checkRole(role) {
+      return function(req, res, next) {
+        if(req.decodedToken && req.decodedToken.role === role) {
+          next()
+        } else {
+          res.status(403).json({ message: "you are not authorized"})
+        }
+      }
+    }
 
   
 
