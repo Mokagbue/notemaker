@@ -73,11 +73,12 @@ class App extends Component {
               (<NoteDeleteForm {...props} deleteNote={this.deleteNote} />)} />
             <Route path="/updateNote/:id" render={(props) =>
               (<NoteUpdateForm {...props} updateNote={this.updateNote} />)} />
-            
+          
             <Route exact path="/users" component={Users}></Route>
           </main>
           <NavLink to="/login">Sign In</NavLink>
           <NavLink to="/">Home</NavLink>
+          <NavLink to="/users">Users</NavLink>
           <img src={Daisy} alt="daisy" className="daisy" />
           <img src={Title} alt="title" className="title" />
       </div>
