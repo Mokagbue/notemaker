@@ -16,11 +16,13 @@ class SignIn extends Component {
         axios
             .post(endpoint, this.state).then(res => {
                 console.log("cdm login: ", res.data, );
+                //saving the token to localstorage
+                localStorage.setItem('jwt', res.data.token)
             })
             .catch(err => {
                 console.error("failed login", err);
             });
-        }
+    }
 
     render() {
         return (
