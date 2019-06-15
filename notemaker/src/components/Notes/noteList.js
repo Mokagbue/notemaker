@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import Auth from '../../Auth/auth.js';
 import axios from 'axios';
 
 class NotesList extends Component {
@@ -15,7 +16,7 @@ class NotesList extends Component {
     
       grabAllNotes = () => {
         console.log("getting notes?", this.state);
-        axios.get('http://localhost:9000/api/notes/:id/users')
+        axios.get('http://localhost:9000/api/notes/')
         .then(response => this.setState({ ...this.state, notes: response.data }))
         .catch(error => console.log(error));
       }
@@ -44,4 +45,4 @@ class NotesList extends Component {
         );
     }
 }
-export default NotesList;
+export default Auth(NotesList);

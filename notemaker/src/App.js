@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, NavLink } from 'react-router-dom';
+import { Route, NavLink, withRouter} from 'react-router-dom';
 // import axios from 'axios';
 
 import Home from './Home/Home.js';
@@ -22,11 +22,6 @@ import './App.css';
 class App extends Component {
   
   render() {
-    logout = () => {
-      localStorage.removeItem('jwt');
-      this.props.history.push('/login');
-    }
-  
     return (
       <div className="App">
           <main>
@@ -58,9 +53,13 @@ class App extends Component {
       </div>
     );
   }
+  logout = () => {
+    localStorage.removeItem('jwt');
+    this.props.history.push('/login');
+  }
 }
 
-export default App;
+export default withRouter(App);
 
 
 // constructor() {
