@@ -1,20 +1,37 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { NavLink } from 'react-router-dom';
+import Auth from '../../Auth/auth.js';
 
 
 class Users extends Component {
     state = {
             users: [],
         }
-    };
+    
     componentDidMount() {
         axios.get('http://localhost:9000/api/users').then(res => {
             this.setState({ users: res.data })
         })
       }
     
-    //   grabAllUsers = () => {
+      render() {
+        return (
+            <div className="list-wrap">
+                <h1 className="home-title">Users</h1>
+                <div>
+                    <p>
+                        {this.state.users.map(user => (
+                            <p key={user.id}>{user.username}</p>
+                        ))}
+                    </p>
+                </div>
+            </div>
+        );
+    }
+}
+export default Auth(Users);
+
+//   grabAllUsers = () => {
     //     // console.log("getting users?", this.state);
     //     // axios.get('http://localhost:9000/api/users')
     //     // .then(response => this.setState({ ...this.state, users: response.data }))
@@ -35,31 +52,6 @@ class Users extends Component {
     //             console.error("Error getting users", err);
     //         });
     //     }
-      render() {
-        return (
-            <div className="list-wrap">
-            <div className="navigation-box">
-                <nav className="nav">
-                    <NavLink exact to="/" className="navigation-buttons">Home</NavLink>
-                </nav>
-                </div>
-                <h1 className="home-title">Users</h1>
-                <div className="page-box">
-                    <div className="note-wrap">
-                        {this.users.map((user, index) => (
-                            <div key={index} className="note-card">
-                                {/* <Link to={`/users/${user.id}`}> */}
-                                    <h3 className="note-title">{user.username}</h3>
-                                {/* </Link> */}
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </div>
-        );
-    }
-}
-export default Users;
 
 // class Users extends Component {
 //     componentDidMount() {
