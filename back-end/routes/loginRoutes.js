@@ -10,7 +10,7 @@ const jwt = require('jsonwebtoken');
   function generateToken(user){
     const jwtPayload = {
       ...user,
-      role: ['admin', 'root'],
+      // role: ['admin', 'root'],
     };
     const jwtSecret = 'batman was here';
     const jwtOptions = {

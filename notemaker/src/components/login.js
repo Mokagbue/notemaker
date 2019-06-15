@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-class SignIn extends Component {
+class Login extends Component {
         state = {
-            username: 'Jazzy',
-            password: 'cats'
+            username: '',
+            password: ''
         };
     handleInputChange = event => {
         const { name, value }  = event.target;
@@ -17,7 +17,8 @@ class SignIn extends Component {
             .post(endpoint, this.state).then(res => {
                 console.log("cdm login: ", res.data, );
                 //saving the token to localstorage
-                localStorage.setItem('jwt', res.data.token)
+                localStorage.setItem('jwt', res.data.token);
+                this.props.history.push('/notes');
             })
             .catch(err => {
                 console.error("failed login", err);
@@ -32,7 +33,8 @@ class SignIn extends Component {
                         <label htmlFor="username">Username</label>
                         <input 
                             type="text" 
-                            name="username" 
+                            name="username"
+                            placeholder="username" 
                             value={this.state.username} 
                             onChange={this.handleInputChange} 
                         />
@@ -41,7 +43,8 @@ class SignIn extends Component {
                         <label htmlFor="password">Password</label>
                         <input 
                             type="password" 
-                            name="password" 
+                            name="password"
+                            placeholder="password" 
                             value={this.state.password} 
                             onChange={this.handleInputChange} 
                         />
@@ -55,4 +58,4 @@ class SignIn extends Component {
     }
 }
 
-export default SignIn;
+export default Login;

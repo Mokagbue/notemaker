@@ -8,8 +8,9 @@ import NotesList from './components/Notes/noteList.js';
 import NoteDeleteForm from './components/Notes/noteDelete.js';
 import NotesForm from './components/Notes/noteForm.js';
 import NoteUpdateForm from './components/Notes/noteUpdate.js';
-// import SignUp from './components/signUp.js';
-// import SignIn from './components/signIn.js';
+
+import Register from './components/register.js';
+import Login from './components/login.js';
 import Users from './components/Users/users.js';
 
 import Daisy from './PNG/daisy.png';
@@ -19,7 +20,50 @@ import Title from './PNG/nmker.png';
 import './App.css';
 
 class App extends Component {
-  // constructor() {
+  
+  render() {
+    logout = () => {
+      localStorage.removeItem('jwt');
+      this.props.history.push('/login');
+    }
+  
+    return (
+      <div className="App">
+          <main>
+            <Route exact path="/home" component={Home}></Route>
+            <Route exact path="/notes" render={(props) =>
+              (<NotesList {...props} notes={this.state.notes} />)} />
+            <Route path="/newNotes" render={(props) =>
+              (<NotesForm {...props} makeNewNote={this.makeNewNote} />)} />  
+            <Route path="/notes/:id" render={(props) =>
+              (<Note {...props} />)} />
+            <Route path="/deleteNote/:id" render={(props) =>
+              (<NoteDeleteForm {...props} deleteNote={this.deleteNote} />)} />
+            <Route path="/updateNote/:id" render={(props) =>
+              (<NoteUpdateForm {...props} updateNote={this.updateNote} />)} />
+          
+            <Route exact path="/users" component={Users}></Route>
+            <Route exact path="/login" component={Login}></Route>
+            <Route exact path="/register" component={Register}></Route>
+          </main>
+          <NavLink to="/login">Sign In</NavLink>
+          &nbsp;|&nbsp;
+          <NavLink to="/">Home</NavLink>
+          &nbsp;|&nbsp;
+          <NavLink to="/users">Users</NavLink>
+          &nbsp;|&nbsp;
+          <button onClick={this.logout}>Logout</button>
+          <img src={Daisy} alt="daisy" className="daisy" />
+          <img src={Title} alt="title" className="title" />
+      </div>
+    );
+  }
+}
+
+export default App;
+
+
+// constructor() {
   //   super();
   //   this.state = {
   //     notes: [],
@@ -55,35 +99,3 @@ class App extends Component {
   //   .then(response => this.grabAllNotes())
   //   .catch(error => console.log({ message:"failed to update note", error}));
   // }
-
-
-  render() {
-  
-    return (
-      <div className="App">
-          <main>
-            <Route exact path="/home" component={Home}></Route>
-            <Route exact path="/notes" render={(props) =>
-              (<NotesList {...props} notes={this.state.notes} />)} />
-            <Route path="/newNotes" render={(props) =>
-              (<NotesForm {...props} makeNewNote={this.makeNewNote} />)} />  
-            <Route path="/notes/:id" render={(props) =>
-              (<Note {...props} />)} />
-            <Route path="/deleteNote/:id" render={(props) =>
-              (<NoteDeleteForm {...props} deleteNote={this.deleteNote} />)} />
-            <Route path="/updateNote/:id" render={(props) =>
-              (<NoteUpdateForm {...props} updateNote={this.updateNote} />)} />
-          
-            <Route exact path="/users" component={Users}></Route>
-          </main>
-          <NavLink to="/login">Sign In</NavLink>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/users">Users</NavLink>
-          <img src={Daisy} alt="daisy" className="daisy" />
-          <img src={Title} alt="title" className="title" />
-      </div>
-    );
-  }
-}
-
-export default App;
