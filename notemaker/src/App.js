@@ -26,8 +26,7 @@ class App extends Component {
       <div className="App">
           <main>
             <Route exact path="/home" component={Home}></Route>
-            <Route exact path="/notes" render={(props) =>
-              (<NotesList {...props} notes={this.state.notes} />)} />
+            <Route exact path="/notes" component={NotesList} />
             <Route path="/newNotes" render={(props) =>
               (<NotesForm {...props} makeNewNote={this.makeNewNote} />)} />  
             <Route path="/notes/:id" render={(props) =>
@@ -41,7 +40,7 @@ class App extends Component {
             <Route exact path="/login" component={Login}></Route>
             <Route exact path="/register" component={Register}></Route>
           </main>
-          <NavLink to="/login">Sign In</NavLink>
+          <NavLink to="/login">Login</NavLink>
           &nbsp;|&nbsp;
           <NavLink to="/">Home</NavLink>
           &nbsp;|&nbsp;
