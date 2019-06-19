@@ -13,10 +13,15 @@ class NotesList extends Component {
     
       grabAllNotes = () => {
         console.log("getting notes?", this.state);
-        axios.get('/api/notes/')
+        axios.get('http://localhost:9000/api/notes/')
         .then(res => this.setState({ notes: res.data }))
         .catch(error => console.log(error));
       }
+    //   makeNewNote = (note) => {
+    //     axios.post('http://localhost:9000/api/notes', note)
+    //     .then(response => this.grabAllNotes())
+    //     .catch(error => console.log({ message:"failed to make new note", error}));
+    //   }
       render() {
         return (
             <div className="list-wrap">
@@ -27,16 +32,13 @@ class NotesList extends Component {
                 </div>
                 <h1 className="home-title">NOTES</h1>
                 <div className="note-wrap">
-                    <p>
-                        {this.state.notes.map((note, index) => (
-                            <div key={index} className="note-card">
+                        {this.state.notes.map((note, id) => (
+                            <div key={id} className="note-card">
                                 <Link to={`/notes/${note.id}`}>
                                     <h3 className="note-title">{note.notes_title}</h3>
                                 </Link>
                             </div>
                         ))}
-                    </p>
-                    
                 </div>
             </div>
         );

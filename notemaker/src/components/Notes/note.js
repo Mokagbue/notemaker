@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Auth from '../../Auth/auth.js';
 import { NavLink } from 'react-router-dom';
 
 class Note extends Component {
@@ -63,4 +64,4 @@ class Note extends Component {
         )
     }
 }
-export default Note;
+export default Auth(Note);

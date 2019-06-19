@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route, NavLink, withRouter} from 'react-router-dom';
-// import axios from 'axios';
+import axios from 'axios';
 
 import Home from './Home/Home.js';
 import Note from './components/Notes/note.js';
@@ -20,7 +20,41 @@ import Title from './PNG/nmker.png';
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      notes: [],
+    }
+  };
   
+  componentDidMount() {
+    this.grabAllNotes();
+  }
+
+  grabAllNotes = () => {
+    console.log("getting notes?", this.state);
+    axios.get('http://localhost:9000/api/notes')
+    .then(response => this.setState({ ...this.state, notes: response.data }))
+    .catch(error => console.log(error));
+  }
+
+  makeNewNote = (note) => {
+    axios.post('http://localhost:9000/api/notes', note)
+    .then(response => this.grabAllNotes())
+    .catch(error => console.log({ message:"failed to make new note", error}));
+  }
+
+  deleteNote = (id) => {
+    axios.delete(`http://localhost:9000/api/notes/${id}`)
+    .then(response => this.grabAllNotes())
+    .catch(error => console.log({ message:"failed to delete note", error}));
+  }
+
+  updateNote = (id, updatedNote) => {
+    axios.put(`http://localhost:9000/api/notes/${id}`, updatedNote)
+    .then(response => this.grabAllNotes())
+    .catch(error => console.log({ message:"failed to update note", error}));
+  }
   render() {
     return (
       <div className="App">
@@ -44,8 +78,6 @@ class App extends Component {
           &nbsp;|&nbsp;
           <NavLink to="/">Home</NavLink>
           &nbsp;|&nbsp;
-          <NavLink to="/users">Users</NavLink>
-          &nbsp;|&nbsp;
           <button onClick={this.logout}>Logout</button>
           <img src={Daisy} alt="daisy" className="daisy" />
           <img src={Title} alt="title" className="title" />
@@ -61,39 +93,3 @@ class App extends Component {
 export default withRouter(App);
 
 
-// constructor() {
-  //   super();
-  //   this.state = {
-  //     notes: [],
-  //   }
-  // };
-  
-
-  // componentDidMount() {
-  //   this.grabAllNotes();
-  // }
-
-  // grabAllNotes = () => {
-  //   console.log("getting notes?", this.state);
-  //   axios.get('http://localhost:9000/api/notes')
-  //   .then(response => this.setState({ ...this.state, notes: response.data }))
-  //   .catch(error => console.log(error));
-  // }
-
-  // makeNewNote = (note) => {
-  //   axios.post('http://localhost:9000/api/notes', note)
-  //   .then(response => this.grabAllNotes())
-  //   .catch(error => console.log({ message:"failed to make new note", error}));
-  // }
-
-  // deleteNote = (id) => {
-  //   axios.delete(`http://localhost:9000/api/notes/${id}`)
-  //   .then(response => this.grabAllNotes())
-  //   .catch(error => console.log({ message:"failed to delete note", error}));
-  // }
-
-  // updateNote = (id, updatedNote) => {
-  //   axios.put(`http://localhost:9000/api/notes/${id}`, updatedNote)
-  //   .then(response => this.grabAllNotes())
-  //   .catch(error => console.log({ message:"failed to update note", error}));
-  // }
