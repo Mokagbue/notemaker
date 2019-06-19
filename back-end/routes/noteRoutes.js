@@ -22,7 +22,7 @@ router.post('/', (req, res) => {
       res.status(201).json(ids);
     })
     .catch(err => {
-      res.status(500).json({ error: 'failed to post new note', err });
+      res.status(500).json({ error: 'failed to post a new new note', err });
     });
   });
 
