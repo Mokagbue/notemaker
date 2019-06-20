@@ -7,8 +7,7 @@ class Login extends Component {
             password: ''
         };
     handleInputChange = event => {
-        const { name, value }  = event.target;
-        this.setState({ [name] : value })
+        this.setState({ [event.target.name]: event.target.value });
     }
     handleSubmit = event => {
         event.preventDefault();

@@ -4,15 +4,14 @@ import axios from 'axios';
 
 class Register extends Component {
         state = {
-            password: '',
-            username: ''
+          username: '',
+          password: '',   
         };
-    handleChange(event) {
-        const { name, value } = event.target;
-        this.setState({ [name]: value });
+    handleChange = event => {
+      this.setState({ [event.target.name]: event.target.value });
     };
 
-    handleSubmit(event) {
+    handleSubmit = event => {
         event.preventDefault();
         axios.post('http://localhost:9000/api/register', this.state)
           .then(res => {

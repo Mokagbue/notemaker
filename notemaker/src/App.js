@@ -78,6 +78,8 @@ class App extends Component {
           </main>
           <NavLink to="/login">Login</NavLink>
           &nbsp;|&nbsp;
+          <NavLink to="/register">Register</NavLink>
+          &nbsp;|&nbsp;
           <NavLink to="/">Home</NavLink>
           &nbsp;|&nbsp;
           <button onClick={this.logout}>Logout</button>
