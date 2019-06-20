@@ -15,8 +15,8 @@ router.get('/', (req, res) => {
 
   //knex create
 router.post('/', (req, res) => {
-    const note = req.body;
-    db.insert(note)
+    const notes = req.body;
+    db.insert(notes)
     .into('notesthree')
     .then(ids => {
       res.status(201).json(ids);

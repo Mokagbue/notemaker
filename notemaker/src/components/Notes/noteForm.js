@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink,  } from 'react-router-dom';
-import Auth from '../../Auth/auth.js';
+// import Auth from '../../Auth/auth.js';
 
 
 class NotesForm extends Component {
@@ -8,17 +8,19 @@ class NotesForm extends Component {
         super(props);
         this.state = {
             notes_title: '',
-            notes_content: ''
+            notes_content: '',
+            username: ''
         }
     }
      
-    handleChange = (event) => {
+    handleChange = event => {
         this.setState({ [event.target.name]: event.target.value });
     }
     makingNewNote = event => {
         const newNote = {
             notes_title: this.state.notes_title,
             notes_content: this.state.notes_content,
+            username: this.state.username,
         }
         this.props.makeNewNote(newNote);
         this.props.history.push('/notes');
@@ -51,6 +53,14 @@ class NotesForm extends Component {
                         name="notes_content"
                         onChange={this.handleChange}
                          />
+                    <input 
+                        className="input-title" 
+                        type="text"
+                        value={this.state.username} 
+                        placeholder="username" 
+                        name="username"
+                        onChange={this.handleChange}
+                         />
                     <button className="input-button" type="submit">Submit</button>
                 </form>
             </div>
@@ -58,7 +68,8 @@ class NotesForm extends Component {
 
     }
 }
-export default Auth(NotesForm);
+export default NotesForm;
+// export default Auth(NotesForm);
 
 // componentDidMount() {
     //     this.grabbingNote(this.props.match.params.id);

@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import Home from './Home/Home.js';
 import Note from './components/Notes/note.js';
-import NotesList from './components/Notes/noteList.js';
+import NotesList from './components/Notes/noteList2.js';
 import NoteDeleteForm from './components/Notes/noteDelete.js';
 import NotesForm from './components/Notes/noteForm.js';
 import NoteUpdateForm from './components/Notes/noteUpdate.js';
@@ -60,7 +60,9 @@ class App extends Component {
       <div className="App">
           <main>
             <Route exact path="/home" component={Home}></Route>
-            <Route exact path="/notes" component={NotesList} />
+            {/* <Route exact path="/notes" component={NotesList} /> */}
+            <Route exact path="/notes" render={(props) =>
+              (<NotesList {...props} notes={this.state.notes} />)} />
             <Route path="/newNotes" render={(props) =>
               (<NotesForm {...props} makeNewNote={this.makeNewNote} />)} />  
             <Route path="/notes/:id" render={(props) =>
