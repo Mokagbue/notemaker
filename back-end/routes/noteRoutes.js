@@ -7,7 +7,7 @@ const db = knex(knexConfig.development);
 
 //list all
 router.get('/', (req, res) => {
-    db('notesthree').then(notes => {
+    db('notesfour').then(notes => {
       res.status(200).json(notes);
     })
     .catch(err => res.status(500).json({ error: 'failed to retrieve notes', err }));
@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     const notes = req.body;
     db.insert(notes)
-    .into('notesthree')
+    .into('notesfour')
     .then(ids => {
       res.status(201).json(ids);
     })
@@ -30,7 +30,7 @@ router.post('/', (req, res) => {
 router.get('/:id', async (req, res) => {
     try {
     const { id } = req.params;
-    const notes = await db('notesthree').where({ id }).first();
+    const notes = await db('notesfour').where({ id }).first();
     res.status(200).json(notes);
     } catch (err) {
       res.status(500).json({ error: 'failed to get note by id', err });
@@ -40,7 +40,7 @@ router.get('/:id', async (req, res) => {
    //get note by user id
 router.get('/:id/users', (req, res) => {
     const { id } = req.params;
-    db('notesthree')
+    db('notesfour')
     .join('usersthree', 'notesthree.id', '=', 'users.notes_id')
     .select('notesthree.notes_title as note', 'usersthree.username')
     .where('usersthree.notes_id', id)
@@ -53,7 +53,7 @@ router.get('/:id/users', (req, res) => {
   //knex delete
 router.delete('/:id', (req,res) => {
     const { id } = req.params;
-    db('notesthree')
+    db('notesfour')
     .where({ id })
     .delete()
     .then(count => {
@@ -70,7 +70,7 @@ router.delete('/:id', (req,res) => {
   router.put('/:id', (req, res) => {
     const { id } = req.params;
     const changes = req.body;
-    db('notesthree')
+    db('notesfour')
     .where({ id })
     .update(changes)
     .then(count => {
