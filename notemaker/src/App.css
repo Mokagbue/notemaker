@@ -1,24 +1,17 @@
-/* body {
+body {
   background-color: black;
-} */
-.App {
-  
 }
 .daisy {
-  width: 100px;
-  height: 100px;
+  width: 800px;
+  height: 800px;
 }
 .title {
   width: 200px;
   height: 100px;
 }
-
-
-@keyframes daisy {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navlinks {
+  text-decoration: none;
+  color: white;
 }
+
+

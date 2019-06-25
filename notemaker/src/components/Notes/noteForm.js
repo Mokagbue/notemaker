@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink,  } from 'react-router-dom';
 // import Auth from '../../Auth/auth.js';
+import './notes.css'; 
 
 
 class NotesForm extends Component {
@@ -27,7 +28,7 @@ class NotesForm extends Component {
     }
     render() {
         return (
-            <div className="note-formBox">
+            <div className="notesBody">
                 <div className="navigation-box">
                     <nav className="nav">
                         <NavLink 

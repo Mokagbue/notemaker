@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { NavLink,  } from 'react-router-dom';
+import './notes.css'; 
 
 class NoteUpdateForm extends Component {
     constructor(props) {
@@ -40,14 +41,14 @@ class NoteUpdateForm extends Component {
     }
     render() {
         return (
-            <div className="note-updateFormBox">
-            <div className="navigation-box">
-            <nav className="nav">
-                <NavLink exact to="/notes" className="navigation-buttons">Notes</NavLink>
-                &nbsp;|&nbsp;
-                <NavLink exact to="/home" className="navigation-buttons">Home</NavLink> 
-            </nav>
-            </div>
+            <div className="notesBody">
+                <div className="navigation-box">
+                    <nav className="nav">
+                        <NavLink exact to="/notes" className="navlinks">Notes</NavLink>
+                        &nbsp;|&nbsp;
+                        <NavLink exact to="/home" className="navlinks">Home</NavLink> 
+                    </nav>
+                </div>
                 <h1>Update Note?</h1>
                 <form className="note-form" onSubmit={this.updatingNote}>
                     <input className="input-title" type="text" placeholder="title" name="notes_title"
