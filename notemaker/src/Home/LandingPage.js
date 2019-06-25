@@ -1,20 +1,26 @@
 import React, { Component } from 'react';
 import { NavLink} from 'react-router-dom';
 import Daisy from '../PNG/daisy.png';
-import Title from '../PNG/nmker.png';
+// import Title from '../PNG/nmker.png';
+import './home.css';
 
 class LandingPage extends Component {
       
       render() {
         return (
-          <div>
-            <NavLink to="/login">Login</NavLink>
-            &nbsp;|&nbsp;
-            <NavLink to="/register">Register</NavLink>
-            &nbsp;|&nbsp;
-            <NavLink to="/">Home</NavLink>
-            <img src={Daisy} alt="daisy" className="daisy" />
-            <img src={Title} alt="title" className="title" />
+          <div className="homeBody">
+            <div className="navBox">
+              <NavLink to="/login" className="navlinks">Login</NavLink>
+              &nbsp;|&nbsp;
+              <NavLink to="/register" className="navlinks">Register</NavLink>
+              &nbsp;|&nbsp;
+              <NavLink to="/" className="navlinks">Home</NavLink>
+            </div>
+            <div className="writingBox">
+              <img src={Daisy} alt="daisy" className="daisy" />
+              <h1 className="pageTitle">The Writing on the Wall</h1>
+              {/* <img src={Title} alt="title" className="title" /> */}
+            </div>     
           </div>         
         )
       }

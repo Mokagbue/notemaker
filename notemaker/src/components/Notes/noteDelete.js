@@ -16,7 +16,7 @@ class NoteDeleteForm extends Component {
     }
     render() {
         return (
-            <div className="note-deleteFormBox">
+            <div className="notesBody">
                 <h2>Are you sure? It's such a lovely note...</h2>
                 <div className="deleteButts">
                     <div className="input-button" onClick={() => this.deleteHandler()}>Delete Note!</div>

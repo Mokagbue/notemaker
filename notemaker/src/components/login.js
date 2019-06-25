@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
+import '../App.css'; 
 
 class Login extends Component {
         state = {
@@ -53,9 +54,9 @@ class Login extends Component {
                         <button type="submit">SignIn</button>
                     </div>
                 </form>
-                <NavLink exact to="/register" className="navigation-buttons">Register</NavLink>
+                <NavLink exact to="/register" className="navlinks">Register</NavLink>
                 &nbsp;|&nbsp;
-                <NavLink exact to="/" className="navigation-buttons">Home</NavLink>
+                <NavLink exact to="/" className="navlinks">Home</NavLink>
             </div>
         );
     }

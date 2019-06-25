@@ -46,16 +46,16 @@ class Note extends Component {
     
     render() {
         return (
-            <div className="note-box">
-            <div className="navigation-box">
-            <nav className="nav">
-                <NavLink exact to="/home" className="navigation-buttons">Home</NavLink>
-                &nbsp;|&nbsp;
-                <NavLink exact to="/notes" className="navigation-buttons">Notes</NavLink>
-                &nbsp;|&nbsp;
-                <NavLink  to="/newNotes" className="navigation-buttons">New</NavLink>
-            </nav>
-            </div>
+            <div className="notesBody">
+                <div className="navigation-box">
+                    <nav className="nav">
+                        <NavLink exact to="/home" className="navlinks">Home</NavLink>
+                        &nbsp;|&nbsp;
+                        <NavLink exact to="/notes" className="navlinks">Notes</NavLink>
+                        &nbsp;|&nbsp;
+                        <NavLink  to="/newNotes" className="navlinks">New</NavLink>
+                    </nav>
+                </div>
                 <div className="a-note">
                     <h1 className="note-title">{this.state.note.notes_title}</h1>
                     <h3 className="note-title">Created By: {this.state.note.username}</h3>
