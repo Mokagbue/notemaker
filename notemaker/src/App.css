@@ -1,5 +1,5 @@
 body {
-  background-color: black;
+  /* background-color: black; */
 }
 .daisy {
   width: 600px;
@@ -13,5 +13,15 @@ body {
   text-decoration: none;
   color: white;
 }
-
-
+.loginBody {
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px pink solid;
+    max-width: 1000px;
+}
+.registerBody {
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px pink solid;
+    max-width: 1000px;
+}
