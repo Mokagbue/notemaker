@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, NavLink, withRouter} from 'react-router-dom';
+import { Route, withRouter} from 'react-router-dom';
 import axios from 'axios';
 
 import Home from './Home/Home2.js';
@@ -13,10 +13,6 @@ import NoteUpdateForm from './components/Notes/noteUpdate.js';
 import Register from './components/register.js';
 import Login from './components/login.js';
 import Users from './components/Users/users.js';
-
-import Daisy from './PNG/daisy.png';
-import Title from './PNG/nmker.png';
-
 
 import './App.css';
 

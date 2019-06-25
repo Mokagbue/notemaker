@@ -43,8 +43,9 @@ class NoteUpdateForm extends Component {
             <div className="note-updateFormBox">
             <div className="navigation-box">
             <nav className="nav">
-                <NavLink exact to="/" className="navigation-buttons">Home</NavLink>
-                <NavLink exact to="/notes" className="navigation-buttons">Notes</NavLink> 
+                <NavLink exact to="/notes" className="navigation-buttons">Notes</NavLink>
+                &nbsp;|&nbsp;
+                <NavLink exact to="/home" className="navigation-buttons">Home</NavLink> 
             </nav>
             </div>
                 <h1>Update Note?</h1>

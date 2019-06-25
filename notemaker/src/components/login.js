@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 
 class Login extends Component {
@@ -52,6 +53,9 @@ class Login extends Component {
                         <button type="submit">SignIn</button>
                     </div>
                 </form>
+                <NavLink exact to="/register" className="navigation-buttons">Register</NavLink>
+                &nbsp;|&nbsp;
+                <NavLink exact to="/" className="navigation-buttons">Home</NavLink>
             </div>
         );
     }
