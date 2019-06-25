@@ -23,7 +23,7 @@ class Register extends Component {
 
     render() {
         return (
-        <div>
+          <div className="registerBody">
             <form onSubmit={this.handleSubmit}>
               <div className="FormField">
                 <label>Username</label>
