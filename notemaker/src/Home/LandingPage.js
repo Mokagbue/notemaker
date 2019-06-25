@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink} from 'react-router-dom';
-import Daisy from '../PNG/daisy.png';
+import Daisy from '../PNG/daisyskull.png';
 // import Title from '../PNG/nmker.png';
 import './home.css';
 
