@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Route, NavLink, withRouter} from 'react-router-dom';
 import axios from 'axios';
 
-import Home from './Home/Home.js';
+import Home from './Home/Home2.js';
+import LandingPage from './Home/LandingPage.js';
 import Note from './components/Notes/note.js';
 import NotesList from './components/Notes/noteList2.js';
 import NoteDeleteForm from './components/Notes/noteDelete.js';
@@ -59,8 +60,8 @@ class App extends Component {
     return (
       <div className="App">
           <main>
+            <Route exact path="/" component={LandingPage}></Route>
             <Route exact path="/home" component={Home}></Route>
-            {/* <Route exact path="/notes" component={NotesList} /> */}
             <Route exact path="/notes" render={(props) =>
               (<NotesList {...props} notes={this.state.notes} />)} />
             <Route path="/newNotes" render={(props) =>
@@ -70,21 +71,11 @@ class App extends Component {
             <Route path="/deleteNote/:id" render={(props) =>
               (<NoteDeleteForm {...props} deleteNote={this.deleteNote} />)} />
             <Route path="/updateNote/:id" render={(props) =>
-              (<NoteUpdateForm {...props} updateNote={this.updateNote} />)} />
-          
+              (<NoteUpdateForm {...props} updateNote={this.updateNote} />)} /> 
             <Route exact path="/users" component={Users}></Route>
             <Route exact path="/login" component={Login}></Route>
             <Route exact path="/register" component={Register}></Route>
           </main>
-          <NavLink to="/login">Login</NavLink>
-          &nbsp;|&nbsp;
-          <NavLink to="/register">Register</NavLink>
-          &nbsp;|&nbsp;
-          <NavLink to="/">Home</NavLink>
-          &nbsp;|&nbsp;
-          <button onClick={this.logout}>Logout</button>
-          <img src={Daisy} alt="daisy" className="daisy" />
-          <img src={Title} alt="title" className="title" />
       </div>
     );
   }
