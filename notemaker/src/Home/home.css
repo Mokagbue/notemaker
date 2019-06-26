@@ -2,15 +2,10 @@
     margin-left: auto;
     margin-right: auto;
     /* border: 1px pink solid; */
-    max-width: 1000px;
+    max-width: 1200px;
   }
 .navlinks {
     text-decoration: none;
-    color: white;
-}
-.pageTitle {
-    font-family: 'Fredericka the Great', cursive;
-    font-size: 156px;
     color: white;
 }
 .navBox {
@@ -19,4 +14,30 @@
 .writingBox {
     display: flex;
     align-items: center;
+    /* border: 1px solid red; */
 }
+.pageTitle {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 156px;
+    color: white;
+    /* border: 1px solid teal; */
+}
+@media (max-width: 1250px) {
+    .daisy {
+      width: 300px;
+      height: 300px;
+    }
+    .pageTitle {
+        font-size: 56px;
+    }
+  }
+  @media (max-width: 650px) {
+    .daisy {
+      width: 300px;
+      height: 300px;
+    }
+    
+  }
+  @media (max-width: 400px) {
+  
+  }
