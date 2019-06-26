@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink} from 'react-router-dom';
 import Daisy from '../PNG/daisyskull.png';
-// import Title from '../PNG/nmker.png';
+
 import './home.css';
 
 class LandingPage extends Component {
@@ -17,7 +17,7 @@ class LandingPage extends Component {
               <NavLink to="/" className="navlinks">Home</NavLink>
             </div>
             <div className="writingBox">
-              <img src={Daisy} alt="daisy" className="daisy" />
+              <img src={Daisy} alt="daisy" className="daisy" width="500" height="500" />
               <h1 className="pageTitle">The Writing on the Wall</h1>
               {/* <img src={Title} alt="title" className="title" /> */}
             </div>     
