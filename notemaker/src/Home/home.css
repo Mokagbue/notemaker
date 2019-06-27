@@ -22,10 +22,47 @@
     color: white;
     /* border: 1px solid teal; */
 }
+.text {
+  color: white;
+  font-size: 50px;
+}
+.daisy {
+  width: 500px;
+  height: 500px;
+}
+.daisyskull {
+  width: 500px;
+  height: 500px;
+}
+.daisyBox {
+  width: 600px;
+  height: 600px;
+  border: 1px solid pink;
+  position: relative;
+  display: inline-block;
+}
+.daisyBox .daisyskull {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+.daisyBox:hover .daisyskull{
+  display: inline;
+}
 @media (max-width: 1250px) {
     .daisy {
       width: 300px;
       height: 300px;
+    }
+    .daisyskull {
+      width: 300px;
+      height: 300px;
+    }
+    .daisyBox {
+      width: 400px;
+      height: 400px;
     }
     .pageTitle {
         font-size: 56px;
@@ -33,6 +70,10 @@
   }
   @media (max-width: 650px) {
     .daisy {
+      width: 300px;
+      height: 300px;
+    }
+    .daisyskull {
       width: 300px;
       height: 300px;
     }

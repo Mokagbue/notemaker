@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink} from 'react-router-dom';
-import Daisy from '../PNG/daisyskull.png';
+import Daisy from '../PNG/daisy2.png';
+import DaisySkull from '../PNG/daisyskull2.png';
 
 import './home.css';
 
@@ -17,9 +18,15 @@ class LandingPage extends Component {
               <NavLink to="/" className="navlinks">Home</NavLink>
             </div>
             <div className="writingBox">
-              <img src={Daisy} alt="daisy" className="daisy" width="500" height="500" />
+              <div className="daisyBox">
+                <img src={Daisy} alt="daisy" className="daisy"  />
+                <img src={DaisySkull} alt="daisyskull" className="daisyskull"  />
+              </div>
               <h1 className="pageTitle">The Writing on the Wall</h1>
               {/* <img src={Title} alt="title" className="title" /> */}
+            </div>
+            <div>
+              <h4 className="text">Leave a Note on the Wall</h4>
             </div>     
           </div>         
         )
