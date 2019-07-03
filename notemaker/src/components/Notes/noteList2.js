@@ -6,9 +6,11 @@ import './notes.css';
 function NotesList(props) {
     return (
         <div>
-            <NavLink  to="/newNotes" className="navlinks">New</NavLink>
-            &nbsp;|&nbsp;
-            <NavLink  to="/home" className="navlinks">Home</NavLink>
+            <div className="navlinks">
+                <NavLink  to="/newNotes" className="navlinks">New</NavLink>
+                &nbsp;|&nbsp;
+                <NavLink  to="/home" className="navlinks">Home</NavLink>
+            </div>
             <div  className="notesBody">
                 <h1 className="home-title">The Wall</h1>
                 <div className="note-wrap">
