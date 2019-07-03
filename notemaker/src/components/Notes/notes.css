@@ -1,8 +1,35 @@
 .notesBody {
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
+    border: 1px double white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
   }
 .navlinks {
     text-decoration: none;
     color: white;
+}
+.home-title {
+  max-width: 450px;
+  /* font-family: 'Reenie Beanie', cursive; */
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 100px;
+  color: white;
+  text-decoration: underline;
+}
+.note-wrap {
+  display:flex;
+  flex-wrap: wrap;
+}
+.note-card {
+  margin: 10px;
+  border: 2px solid white;
+  padding: 10px;
+}
+.note-title {
+  color: white;
+  text-decoration: none;
 }
