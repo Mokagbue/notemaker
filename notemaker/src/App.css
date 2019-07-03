@@ -9,8 +9,10 @@ body {
 .navlinks {
   text-decoration: none;
   color: white;
+  /* padding: 10px; */
 }
 .navBox {
+  /* color: white; */
 
 }
 .formInputs {

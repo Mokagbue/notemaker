@@ -11,6 +11,7 @@
 .navlinks {
     text-decoration: none;
     color: white;
+    padding:10px;
 }
 .home-title {
   max-width: 450px;
