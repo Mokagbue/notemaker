@@ -9,6 +9,17 @@
     padding: 10px;
     
   }
+  .a-note {
+    margin-top: 50px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px double white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
 .navlinks {
     text-decoration: none;
     color: white;
@@ -22,10 +33,20 @@
   color: white;
   text-decoration: underline;
 }
+.note-buttons {
+  color: white;
+  width: 150px;
+  margin: 10px;
+  padding: 5px;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+}
 .note-title {
   font-size: 30px;
   color: white;
   font-family: 'Fredericka the Great', cursive;
+  text-decoration: none;
 }
 .note-wrap {
   display:flex;
@@ -37,9 +58,13 @@
   border: 2px solid white;
   padding: 10px;
 }
-.note-title {
+
+.note-content {
   color: white;
-  text-decoration: none;
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 3rem;
+  border: 2px double white;
+  padding: 20px;
 }
 .noteFormBox {
   max-width: 500px;

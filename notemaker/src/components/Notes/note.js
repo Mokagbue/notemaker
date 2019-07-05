@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Auth from '../../Auth/auth.js';
 import { NavLink } from 'react-router-dom';
+import './notes.css'; 
 
 class Note extends Component {
     constructor() {
@@ -46,7 +47,7 @@ class Note extends Component {
     
     render() {
         return (
-            <div className="notesBody">
+            <div>
                 <div className="navigation-box">
                     <nav className="nav">
                         <NavLink exact to="/home" className="navlinks">Home</NavLink>
