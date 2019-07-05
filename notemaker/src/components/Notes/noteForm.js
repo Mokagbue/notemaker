@@ -29,15 +29,11 @@ class NotesForm extends Component {
     render() {
         return (
             <div className="notesBody">
-                <div className="navigation-box">
-                    <nav className="nav">
-                        <NavLink 
-                            exact to="/notes" 
-                            className="navigation-buttons">Notes</NavLink> 
-                    </nav>
+                <div className="navBox">
+                    <NavLink exact to="/notes" className="navigation-buttons">Notes</NavLink> 
                 </div>
-                <h2>Making A New Note?</h2>
-                <form onSubmit={this.makingNewNote}>
+                <h2 className="note-title">Making A New Note?</h2>
+                <form onSubmit={this.makingNewNote} className="noteFormBox">
                     <input 
                         className="input-title" 
                         type="text"
