@@ -1,5 +1,5 @@
 .notesBody {
-    max-width: 900px;
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
     border: 1px double white;
@@ -7,6 +7,7 @@
     flex-direction: column;
     align-items: center;
     padding: 10px;
+    
   }
 .navlinks {
     text-decoration: none;
@@ -21,9 +22,15 @@
   color: white;
   text-decoration: underline;
 }
+.note-title {
+  font-size: 30px;
+  color: white;
+  font-family: 'Fredericka the Great', cursive;
+}
 .note-wrap {
   display:flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
+  justify-content: center;
 }
 .note-card {
   margin: 10px;
@@ -33,4 +40,9 @@
 .note-title {
   color: white;
   text-decoration: none;
+}
+.noteFormBox {
+  max-width: 500px;
+  height: 150px;
+  border: 1px green solid;
 }

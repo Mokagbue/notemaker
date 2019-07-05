@@ -13,6 +13,11 @@
   /* color: white; */
   padding: 10px;
 }
+.homeflexBox {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+}
 .logout {
   width: 50px;
   font-size: 1rem;

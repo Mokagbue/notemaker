@@ -12,11 +12,13 @@ class Home extends Component {
                 <NavLink to="/notes" className="navlinks">Notes</NavLink>
                 &nbsp;|&nbsp;
                 <button onClick={this.logout} className="logout">Logout</button>
-              </div>                
-              <div className="daisyBox">
-                <img src={Daisy} alt="daisy" className="daisy"  />
-                <img src={DaisySkull} alt="daisyskull" className="daisyskull"  />
               </div>
+              <div className="homeflexBox">
+                <div className="daisyBox">
+                  <img src={Daisy} alt="daisy" className="daisy"  />
+                  <img src={DaisySkull} alt="daisyskull" className="daisyskull"  />
+                </div>
+              </div>               
             </div>
     );
   }
