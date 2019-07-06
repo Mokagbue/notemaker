@@ -35,7 +35,7 @@ class Login extends Component {
                     <NavLink exact to="/" className="navlinks">Home</NavLink>
                 </div>
                 <div className="loginBody">
-                    <h1 className="userTitles">Login?</h1>
+                    <h1 className="userTitles">Login</h1>
                     <div className="loginFormBox">
                         <form onSubmit={this.handleSubmit}>
                             <div>
@@ -59,7 +59,7 @@ class Login extends Component {
                                 />
                             </div>
                             <div className="formButtons">
-                                <div type="submit">SignIn</div>
+                                <button type="submit">SignIn</button>
                             </div>
                         </form>
                     </div> 
