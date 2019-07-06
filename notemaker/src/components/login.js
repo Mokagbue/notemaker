@@ -28,40 +28,42 @@ class Login extends Component {
 
     render() {
         return (
-            <div className="loginBody">
+            <div>
                 <div className="navBox">
                     <NavLink exact to="/register" className="navlinks">Register</NavLink>
                     &nbsp;|&nbsp;
                     <NavLink exact to="/" className="navlinks">Home</NavLink>
                 </div>
-                <h1 className="userTitles">Login</h1>
-                <div className="loginFormBox">
-                    <form onSubmit={this.handleSubmit}>
-                        <div>
-                            <input 
-                                type="text" 
-                                name="username"
-                                placeholder="username" 
-                                value={this.state.username} 
-                                onChange={this.handleInputChange} 
-                            />
-                            <label className="formInputs"> :Username</label>
-                        </div>
-                        <div>
-                            <input 
-                                type="password" 
-                                name="password"
-                                placeholder="password" 
-                                value={this.state.password} 
-                                onChange={this.handleInputChange} 
-                            />
-                            <label className="formInputs"> :password</label>
-                        </div>
-                        <div className="formButtons">
-                            <button type="submit" >SignIn</button>
-                        </div>
-                    </form>
-                </div>   
+                <div className="loginBody">
+                    <h1 className="userTitles">Login?</h1>
+                    <div className="loginFormBox">
+                        <form onSubmit={this.handleSubmit}>
+                            <div>
+                                <input 
+                                    type="text" 
+                                    name="username"
+                                    placeholder="username" 
+                                    value={this.state.username} 
+                                    onChange={this.handleInputChange} 
+                                />
+                                <label className="formInputs"> :Username</label>
+                            </div>
+                            <div>
+                                <input 
+                                    type="password" 
+                                    name="password"
+                                    placeholder="password" 
+                                    value={this.state.password} 
+                                    onChange={this.handleInputChange} 
+                                />
+                                <label className="formInputs"> :password</label>
+                            </div>
+                            <div className="formButtons">
+                                <button type="submit" >SignIn</button>
+                            </div>
+                        </form>
+                    </div> 
+                </div>  
             </div>
         );
     }
