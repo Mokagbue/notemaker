@@ -47,9 +47,14 @@ body {
     justify-content: flex-end;
 }
 .formButtons {
-    /* display: flex;
-    justify-content: flex-end; */
-    /* border: 1px solid red; */
+    border: 2px solid grey;
+    cursor: pointer;
+    width: 150px;
+    margin: 20px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    background-color: white;
 }
 /*Register Stylings*/
 .registerBody {

@@ -39,6 +39,7 @@ class Login extends Component {
                     <div className="loginFormBox">
                         <form onSubmit={this.handleSubmit}>
                             <div>
+                                <label className="formInputs">Username : </label>
                                 <input 
                                     type="text" 
                                     name="username"
@@ -46,9 +47,9 @@ class Login extends Component {
                                     value={this.state.username} 
                                     onChange={this.handleInputChange} 
                                 />
-                                <label className="formInputs"> :Username</label>
                             </div>
                             <div>
+                                <label className="formInputs">password : </label>
                                 <input 
                                     type="password" 
                                     name="password"
@@ -56,10 +57,9 @@ class Login extends Component {
                                     value={this.state.password} 
                                     onChange={this.handleInputChange} 
                                 />
-                                <label className="formInputs"> :password</label>
                             </div>
                             <div className="formButtons">
-                                <button type="submit" >SignIn</button>
+                                <div type="submit">SignIn</div>
                             </div>
                         </form>
                     </div> 
