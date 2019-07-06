@@ -24,16 +24,18 @@ class Register extends Component {
 
     render() {
         return (
-          <div className="registerBody">
+          <div>
             <div className="navBox">
               <NavLink exact to="/login" className="navlinks">Login</NavLink>
               &nbsp;|&nbsp;
               <NavLink exact to="/" className="navlinks">Home</NavLink>
             </div>
+            <div className="registerBody">
             <h1 className="userTitles">Register</h1>
             <div className="registerFormBox">
               <form onSubmit={this.handleSubmit}>
                 <div className="FormField">
+                  <label className="formInputs">Username : </label>
                   <input 
                       type="text" 
                       id="name" 
@@ -42,9 +44,10 @@ class Register extends Component {
                       value={this.state.username} 
                       onChange={this.handleChange} 
                   />
-                  <label className="formInputs"> :Username</label>
+                  
                 </div>
                 <div>
+                  <label className="formInputs">password : </label>
                   <input 
                       type="password" 
                       id="password"
@@ -53,7 +56,6 @@ class Register extends Component {
                       value={this.state.password} 
                       onChange={this.handleChange} 
                   />
-                  <label className="formInputs"> :password</label>
                 </div>
                 <div className="formButtons">
                     <button type='submit'>Register</button>
@@ -61,7 +63,8 @@ class Register extends Component {
               </form>
             </div>
           </div>
-        );
+        </div>
+      );
     }
 }
 export default Register;
