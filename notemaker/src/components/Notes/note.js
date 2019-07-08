@@ -51,10 +51,8 @@ class Note extends Component {
                 <div className="navigation-box">
                     <nav className="nav">
                         <NavLink exact to="/home" className="navlinks">Home</NavLink>
-                        &nbsp;|&nbsp;
                         <NavLink exact to="/notes" className="navlinks">Notes</NavLink>
-                        &nbsp;|&nbsp;
-                        <NavLink  to="/newNotes" className="navlinks">New</NavLink>
+                        <NavLink  to="/newNotes" className="navlinks">New Note</NavLink>
                     </nav>
                 </div>
                 <div className="a-note">
