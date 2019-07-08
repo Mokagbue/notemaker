@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './noteDelete.css';
 
 class NoteDeleteForm extends Component {
     // constructor(props) {
@@ -17,8 +18,8 @@ class NoteDeleteForm extends Component {
     render() {
         return (
             <div className="notesBody">
-                <h2>Are you sure? It's such a lovely note...</h2>
-                <div className="deleteButts">
+                <h2 className="deleteTitle">Are you sure? It's such a lovely note...</h2>
+                <div className="deleteButtons">
                     <div className="input-button" onClick={() => this.deleteHandler()}>Delete Note!</div>
                     <div className="input-button" onClick={() => this.returnToNote()}>Never Mind!</div>
                 </div>

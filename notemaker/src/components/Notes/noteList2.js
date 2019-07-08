@@ -1,14 +1,12 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-// import Auth from '../../Auth/auth.js';
 import './notes.css'; 
 
 function NotesList(props) {
     return (
         <div>
             <div className="navlinks">
-                <NavLink  to="/newNotes" className="navlinks">New</NavLink>
-                &nbsp;|&nbsp;
+                <NavLink  to="/newNotes" className="navlinks">New Note</NavLink>
                 <NavLink  to="/home" className="navlinks">Home</NavLink>
             </div>
             <div  className="notesBody">

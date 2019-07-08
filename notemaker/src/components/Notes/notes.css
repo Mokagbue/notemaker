@@ -6,8 +6,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px;
-    
+    padding: 10px; 
   }
   .a-note {
     margin-top: 50px;
@@ -58,16 +57,41 @@
   border: 2px solid white;
   padding: 10px;
 }
-
 .note-content {
   color: white;
   font-family: 'Reenie Beanie', cursive;
+  max-width: 500px;
+  min-height: 100px;
+  display: flex;
+  overflow-wrap: break-word;
+  /* word-wrap: break-word; */
   font-size: 3rem;
   border: 2px double white;
   padding: 20px;
 }
+.note-buttonwrap {
+  display: flex;
+}
+.input-content {
+  min-height: 100px;
+  max-width: 300px;
+  font-size: 2rem;
+  font-family: 'Reenie Beanie', cursive;
+  margin: 10px;
+}
+.input-title {
+  margin: 5px;
+  font-size: 2rem;
+  font-family: 'Reenie Beanie', cursive;
+}
+.input-button {
+  background-color: black;
+}
 .noteFormBox {
   max-width: 500px;
-  height: 150px;
-  border: 1px green solid;
+  /* border: 2px white double; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px;
 }
