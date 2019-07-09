@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import Auth from '../../Auth/auth.js';
 import { NavLink } from 'react-router-dom';
 import './about.css'; 
@@ -16,8 +15,17 @@ class About extends Component {
                         <NavLink  to="/newNotes" className="navlinks">New Note</NavLink>
                     </nav>
                 </div>
+                <div className="aboutBody">
+                    <h1 className="aboutTitle">About The Wall</h1>
+                    <div className="aboutContent">
+                        <p>A blank canvas</p>
+                        <p>where anyone can leave a message.</p>
+                         <p>Scrub the wall clean,</p>
+                         <p>or add to the layers</p>
+                    </div>
+                </div>
             </div>
         )
     }
 }
-export default Auth(Note);
+export default Auth(About);

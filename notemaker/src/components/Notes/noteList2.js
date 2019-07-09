@@ -6,11 +6,12 @@ function NotesList(props) {
     return (
         <div>
             <div className="navlinks">
-                <NavLink  to="/newNotes" className="navlinks">New Note</NavLink>
                 <NavLink  to="/home" className="navlinks">Home</NavLink>
+                <NavLink  to="/about" className="navlinks">About</NavLink>
             </div>
             <div  className="notesBody">
                 <h1 className="home-title">The Wall</h1>
+                <NavLink  to="/newNotes" className="navlinks">New Note</NavLink>
                 <div className="note-wrap">
                     {props.notes.map((note, index) => (
                         <div key={index} className="note-card">

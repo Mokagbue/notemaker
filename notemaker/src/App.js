@@ -9,7 +9,7 @@ import NotesList from './components/Notes/noteList2.js';
 import NoteDeleteForm from './components/Notes/noteDelete.js';
 import NotesForm from './components/Notes/noteForm.js';
 import NoteUpdateForm from './components/Notes/noteUpdate.js';
-
+import About from './components/Notes/about.js';
 import Register from './components/register.js';
 import Login from './components/login.js';
 import Users from './components/Users/users.js';
@@ -71,6 +71,7 @@ class App extends Component {
             <Route exact path="/users" component={Users}></Route>
             <Route exact path="/login" component={Login}></Route>
             <Route exact path="/register" component={Register}></Route>
+            <Route exact path="/about" component={About}></Route>
           </main>
       </div>
     );

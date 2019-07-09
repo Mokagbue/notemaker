@@ -1,4 +1,4 @@
-.aboutBody {
+.notesUpdateBody {
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
@@ -7,28 +7,23 @@
     align-items: center;
     padding: 10px;
 }
-.navigation-box {
-    margin: 10px;
-}
-.nav {
-
-}
-.navlinks {
-
-}
-.aboutTitle {
+.updateTitle {
     font-family: 'Fredericka the Great', cursive;
     font-size: 80px;
     color: white;
 }
-.aboutContent {
-    color: white;
-    font-family: 'Reenie Beanie', cursive;
-    font-size: 2rem;
+.updateFormBox {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    border: 1px white solid;
-    max-width: 500px;
-    padding: 10px;
+}
+.note-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 450px;
+}
+.input-content {
+    min-height: 200px;
+}
+.input-title {
+    
 }
