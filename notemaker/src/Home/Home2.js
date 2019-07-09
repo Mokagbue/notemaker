@@ -10,7 +10,6 @@ class Home extends Component {
             <div className="homeBodyt">
               <div className="homenav">
                 <NavLink to="/notes" className="navlinks">Notes</NavLink>
-                &nbsp;|&nbsp;
                 <button onClick={this.logout} className="logout">Logout</button>
               </div>
               <div className="homeflexBox">
@@ -18,6 +17,7 @@ class Home extends Component {
                   <img src={Daisy} alt="daisy" className="daisy"  />
                   <img src={DaisySkull} alt="daisyskull" className="daisyskull"  />
                 </div>
+                <h1 className="pageTitle">The Writing on the Wall</h1>
               </div>               
             </div>
     );
