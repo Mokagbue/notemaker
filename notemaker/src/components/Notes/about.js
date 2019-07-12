@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Auth from '../../Auth/auth.js';
+// import Auth from '../../Auth/auth.js';
 import { NavLink } from 'react-router-dom';
 import './about.css'; 
 
@@ -28,4 +28,5 @@ class About extends Component {
         )
     }
 }
-export default Auth(About);
+export default About;
+// export default Auth(About);

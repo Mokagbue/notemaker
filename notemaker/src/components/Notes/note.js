@@ -69,3 +69,4 @@ class Note extends Component {
     }
 }
 export default Note;
+// export default Auth(Note);
